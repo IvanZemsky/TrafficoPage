@@ -4,8 +4,10 @@
 
 body{
     font-family: 'Rubik', sans-serif;
-    font-weight: 500;
+    font-weight: 300;
+    font-size: 18px;
     background-color: #FEF8F5;
+    color: #402B2B;
     position: relative;
 }
 
@@ -17,6 +19,23 @@ a{
     max-width: 1190px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+/* page */
+
+.page-title{
+    font-family: 'Rubik';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 40px;
+    letter-spacing: 0.1em;
+    color: #EE4D47;
+    text-transform: uppercase;
+}
+
+.page-desc{
+    font-family: 'Rubik';
+    line-height: 40px;
 }
 
 /* Header */
@@ -44,6 +63,7 @@ a{
     display: flex;
     align-items: center;
     padding-top: 21px;
+    font-size: 16px;
 }
 
 .header__nav-item:not(:last-child){
@@ -57,7 +77,6 @@ a{
 .header__nav-link{
     font-family: 'Rubik';
     font-weight: 700;
-    font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -84,6 +103,7 @@ a{
 
 .intro{
     background-image: url(../img/intro/intro-bg.png);
+    margin-bottom: 105px;
 }
 
 .intro__content{
@@ -119,4 +139,15 @@ a{
 
 .intro__start:hover{
     filter: brightness(110%);
+}
+
+/* About */
+
+.about__text-title{
+    margin-bottom: 40px;
+}
+
+.about__text-desc{
+    margin-bottom: 70px;
+    max-width: 470px;
 }
