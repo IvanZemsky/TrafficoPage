@@ -200,6 +200,10 @@ a{
 
 /* How */
 
+.how{
+    margin-bottom: 120px;
+}
+
 .how__content{
     padding-bottom: 150px;
 }
@@ -253,4 +257,27 @@ a{
     left: 0;
     z-index: 50;
     width: 100%;
+}
+
+.faq__content{
+    padding: 101px 0 0 0;
+}
+
+.faq__container{
+    background-image: url(../img/faq/faq-art.png);
+    background-position: top 0 right 0;
+    padding: 123px 0 80px;
+    margin-bottom: 90px;
+}
+
+.faq__title{
+    margin-bottom: 44px;
+}
+
+.faq__desc{
+    max-width: 550px;
+    font-family: 'DM Serif Display';
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 140%;
 }
