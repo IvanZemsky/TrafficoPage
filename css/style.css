@@ -263,7 +263,7 @@ a{
     padding: 101px 0 0 0;
 }
 
-.faq__container{
+.faq__text-container{
     background-image: url(../img/faq/faq-art.png);
     background-position: top 0 right 0;
     padding: 123px 0 80px;
@@ -280,4 +280,58 @@ a{
     font-weight: 400;
     font-size: 48px;
     line-height: 140%;
+}
+
+.faq__cards-container{
+    padding-right: 40px;
+}
+
+.faq__cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px 20px;
+}
+
+.faq__card{
+    position: relative;
+    flex-basis: 550px;
+}
+
+.faq__card-question{
+    min-height: 90px;
+    padding: 15px 115px 15px 25px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
+    border-radius: 10px;
+}
+
+.faq__card-sign{
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+    display: block;
+    width: 20px;
+    height: 20px;
+    z-index: 20;
+}
+
+.faq__card-sign-line{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ee4d47;
+    transform: translateY(-50%);
+}
+
+.faq__card-sign-line:first-child{
+    transform: translateY(-50%) rotate(90deg);
 }
