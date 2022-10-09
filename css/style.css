@@ -239,13 +239,13 @@ a{
 
 .faq{
     position: relative;
+    margin-bottom: 177px;
 }
 
 .faq-bg{
     position: relative;
     z-index: 1;
     max-width: 1170px;
-    height: 1500px;
     margin-left: auto;
     background-color: #fdede8;
     border-radius: 150px 0 0 0;
@@ -372,4 +372,10 @@ a{
     letter-spacing: 0.05em;
     color: #ED4D47;
     text-transform: uppercase;
+}
+
+/* Comments */
+
+.comments__header{
+    margin-bottom: 44px;
 }
