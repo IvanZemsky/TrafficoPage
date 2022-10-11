@@ -15,6 +15,11 @@ a{
     text-decoration: none;
 }
 
+button{
+    border: 0;
+    background-color: transparent;
+}
+
 .wrapper{
     max-width: 1190px;
     padding: 0 15px;
@@ -376,6 +381,87 @@ a{
 
 /* Comments */
 
+.comments{
+    overflow: hidden;
+}
+
 .comments__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 44px;
+}
+
+.comments__arrows{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-right: 40px;
+}
+
+.comments__arrow:first-child{
+    opacity: .5;
+}
+
+.comment__arrow img{
+    width: 30px;
+    height: 12px;
+}
+
+.comments__container{
+    display: flex;
+    gap: 20px;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.comments__desc{
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+    max-width: 361px;
+    padding-right: 50px;
+    font-family: 'DM Serif Display';
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 140%;
+    background-color: #FEF8F5;
+    box-shadow: 7px 0 3px #FEF8F5;
+}
+
+.comments__cards{
+    position: relative;
+    display: flex;
+    gap: 20px;
+    transition: .3s;
+}
+
+.comments__card{
+    width: 420px;
+    height: 360px;
+    padding: 60px 52px 40px 48px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.comments__card-text{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+
+.comments__card-author{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.comments__card-name{
+    font-weight: 700;
+    font-style: 16px;
+    line-height: 30px;
 }
