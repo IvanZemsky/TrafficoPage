@@ -384,6 +384,7 @@ button{
 
 .comments{
     overflow: hidden;
+    margin-bottom: 160px;
 }
 
 .comments__header{
