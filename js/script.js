@@ -17,7 +17,6 @@ window.addEventListener('load', function(){
     commentsForward.addEventListener('click', function(){
         leftOffset += 435;
         if(leftOffset > 1300) {
-            commentsForward.style.opacity = '.5';
             leftOffset = 0;
         }
         
@@ -27,7 +26,6 @@ window.addEventListener('load', function(){
     commentsBack.addEventListener('click', function(){
         leftOffset -= 435;
         if(leftOffset < 0) {
-            commentsBack.style.opacity = '.5';
             leftOffset = 0;
         }
         commentsCards.style.left = `-${leftOffset}px`;
