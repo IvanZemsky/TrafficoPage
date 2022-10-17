@@ -247,6 +247,7 @@ button{
     margin-bottom: 177px;
 }
 
+/*
 .faq-bg{
     position: relative;
     z-index: 1;
@@ -255,17 +256,27 @@ button{
     background-color: #fdede8;
     border-radius: 150px 0 0 0;
 }
+*/
 
-.faq__wrap-container{
+.faq{
+    position: relative;
+}
+
+.faq::before{
+    content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: 50;
+    right: 0;
     width: 100%;
+    max-width: 1170px;
+    height: 100%;
+    border-radius: 150px 0 0 0;
+    background-color: #FDEDE8;
+    z-index: -1;
 }
 
 .faq__content{
-    padding: 101px 0 0 0;
+    padding: 101px 0 109px 0;
 }
 
 .faq__text-container{
@@ -467,3 +478,23 @@ button{
     font-style: 16px;
     line-height: 30px;
 }
+
+/* Connect */
+
+.connect{
+    position: relative;
+}
+
+/*
+.connect::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    background-color: silver;
+    z-index: -1;
+}
+*/
