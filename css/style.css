@@ -41,6 +41,28 @@ button{
     line-height: 40px;
 }
 
+.page-button{
+    display: block;
+    width: fit-content;
+    padding: 20px 78px 20px 25px;
+    background-color: #EE4D47;
+    background-image: url(../img/page/arrow.svg);
+    background-position: center right 24px;
+    border-radius: 5px;
+    font-family: 'Rubik';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .15s;
+}
+
+.page-button:hover{
+    filter: brightness(110%);
+}
+
 /* Header */
 
 .header{
@@ -126,28 +148,6 @@ button{
     font-size: 100px;
     margin-bottom: 60px;
     color: #fff;
-}
-
-.intro__start{
-    display: block;
-    width: fit-content;
-    padding: 20px 78px 20px 25px;
-    background-color: #EE4D47;
-    background-image: url(../img/page/arrow.svg);
-    background-position: center right 24px;
-    border-radius: 5px;
-    font-family: 'Rubik';
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #fff;
-    transition: .15s;
-}
-
-.intro__start:hover{
-    filter: brightness(110%);
 }
 
 /* About */
@@ -247,22 +247,11 @@ button{
     margin-bottom: 177px;
 }
 
-/*
-.faq-bg{
-    position: relative;
-    z-index: 1;
-    max-width: 1170px;
-    margin-left: auto;
-    background-color: #fdede8;
-    border-radius: 150px 0 0 0;
-}
-*/
-
 .faq{
     position: relative;
 }
 
-.faq::before{
+.faq::after{
     content: '';
     position: absolute;
     top: 0;
@@ -499,6 +488,24 @@ button{
 }
 */
 
+.connect{
+    background-image: url(../img/connect/connect-bg.png);
+    position: relative;
+}
+
+.connect::after{
+    content: '';
+    position: absolute;
+    top: 170px;
+    left: 0;
+    width: 100%;
+    max-width: 1400px;
+    height: 100%;
+    background-color: #0f264c;
+    border-radius: 75px;
+    z-index: -1;
+}
+
 .connect__content{
     padding: 60px 135px 120px 0;
 }
@@ -515,6 +522,7 @@ button{
 }
 
 .connect__form-text{
+    display: block;
     font-weight: 300;
     font-size: 16px;
     line-height: 40px;
