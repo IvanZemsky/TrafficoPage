@@ -423,7 +423,7 @@ button{
     z-index: 10;
     flex-shrink: 0;
     max-width: 361px;
-    padding: 20px 50px 0 0;
+    padding: 20px 30px 0 0;
     font-family: 'DM Serif Display';
     font-weight: 400;
     font-size: 48px;
@@ -454,7 +454,6 @@ button{
 }
 
 .comments__card-text{
-    font-weight: 300;
     font-size: 16px;
     line-height: 30px;
     margin-bottom: 60px;
@@ -488,6 +487,7 @@ button{
     max-width: 1400px;
     height: calc(100% - 170px);
     background-color: #0f264c;
+    background-image: url(../img/connect/connect-line.svg);
     border-radius: 0 95px 0 0;
     z-index: -1;
 }
@@ -519,19 +519,18 @@ button{
 }
 
 .connect__form{
+    flex-basis: 550px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 52px 75px;
-    max-width: 550px;
-    background: #fff;
+    background-color: #fff;
     box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
     border-radius: 10px;
 }
 
 .connect__form-text{
     display: block;
-    font-weight: 300;
     font-size: 16px;
     line-height: 40px;
 }
@@ -585,4 +584,24 @@ button{
     line-height: 19px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+/* Footer */
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 50px 138px 100px 0;
+}
+
+.footer__container-copyright{
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.footer__container-socials{
+    display: flex;
+    gap: 31px;
 }
