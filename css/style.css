@@ -420,7 +420,6 @@ button{
 
 .comments__desc{
     position: relative;
-    z-index: 10;
     flex-shrink: 0;
     max-width: 361px;
     padding: 20px 30px 0 0;
@@ -430,22 +429,30 @@ button{
     line-height: 140%;
     background-color: #FEF8F5;
     box-shadow: 7px 0 3px #FEF8F5;
+    z-index: 10;
 }
 
 .comments__slider{
+    width: 100vw;
+    max-width: 1600px;
     padding: 20px;
 }
 
 .comments__cards{
-    position: relative;
     display: flex;
     gap: 20px;
     transition: .3s;
+    width: 100vw;
+    max-width: 1600px;
 }
 
 .comments__card{
-    width: 420px;
-    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    width: 26.25%;
+    min-height: 360px;
     padding: 60px 52px 40px 48px;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -456,7 +463,6 @@ button{
 .comments__card-text{
     font-size: 16px;
     line-height: 30px;
-    margin-bottom: 60px;
 }
 
 .comments__card-author{
@@ -584,6 +590,11 @@ button{
     line-height: 19px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    transition: .15s;
+}
+
+.connect__links-link:hover{
+    color: #2152a1;
 }
 
 /* Footer */
