@@ -1,3 +1,21 @@
+// Scroll from header
+(function() {
+    const headerLinks = document.querySelectorAll('.header__nav-item .header__nav-link');
+    
+    for (const headerLink of headerLinks) {
+        headerLink.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const id = headerLink.getAttribute('href');
+            document.querySelector(id).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        })
+    }
+}());
+
+
 // lavelCancelFocus
 
 document.body.addEventListener('click', (event) => {
@@ -18,8 +36,6 @@ document.body.addEventListener('click', (event) => {
     if (leftOffsetStep > 430) {
         leftOffsetStep = 430;
     }
-   
-    console.log(leftOffsetStep);
 
     commentsForward.addEventListener('click', function(){
         if (leftOffset > -leftOffsetStep*2) {
@@ -51,14 +67,3 @@ document.body.addEventListener('click', (event) => {
 
 }());
 
-/* slider size
-
-(function() {
-    const commentsSlider = document.querySelector('.comments__slider');
-    const wrapperOffsetLeft = document.querySelector('.wrapper').offsetLeft;
-    
-    commentsSliderWidth = document.documentElement.clientWidth - 381 - wrapperOffsetLeft;
-    commentsSlider.style.width = `${commentsSliderWidth}px`;
-}());
-
-*/

@@ -471,6 +471,17 @@ button{
     gap: 20px;
 }
 
+.comments__card-img{
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.comments__card-img img{
+    width: 100%;
+    height: auto;
+}
+
 .comments__card-name{
     font-weight: 700;
     font-style: 16px;
