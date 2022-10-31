@@ -261,7 +261,7 @@ button{
     height: 100%;
     border-radius: 150px 0 0 0;
     background-color: #fdede8;
-    z-index: -1;
+    z-index: -2;
 }
 
 .faq__content{
@@ -306,10 +306,22 @@ button{
 }
 
 .faq__card{
+    overflow: hidden;
+}
+
+.faq__card-content{
     position: relative;
+    border-radius: 10px;
+    transition: .15s;
+}
+
+.faq__card-content_hidden{
+    height: 90px;
+    overflow: hidden;
 }
 
 .faq__card-question{
+    position: relative;
     min-height: 90px;
     padding: 15px 115px 15px 25px;
     display: flex;
@@ -320,6 +332,8 @@ button{
     background: #FFFFFF;
     box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
     border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .faq__card-sign,
@@ -349,6 +363,25 @@ button{
 .faq__card-sign-line:first-child,
 .faq__more-sign-line:first-child{
     transform: translateY(-50%) rotate(90deg);
+}
+
+.faq__card-answer{
+    padding: 90px 35px 60px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    background-color: #fff7f5;
+    box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
+    border-radius: 10px;
+    transform: translateY(-40px);
+    z-index: -1;
+}
+
+.faq__card-answer_hidden{
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
 }
 
 .faq__cards-more-container{

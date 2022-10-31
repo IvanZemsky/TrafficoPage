@@ -16,13 +16,27 @@
 }());
 
 
-// lavelCancelFocus
+// labelCancelFocus
 
 document.body.addEventListener('click', (event) => {
     if (event.target.tagName == 'LABEL') {
       event.preventDefault();
     }
-  });
+});
+
+// Answers on questions
+
+(function() {
+    const faqCardContents = document.querySelectorAll('.faq__card-content');
+    const faqCardAnswers = document.querySelector('.faq__card-answer');
+    
+    for (const faqCardContent of faqCardContents) {
+        faqCardContent.addEventListener('click', () => {
+            faqCardContent.classList.toggle('faq__card-content_hidden');
+            faqCardAnswers.classList.toggle('faq__card-answer_hidden');
+        });
+    }
+}());
 
 // Slider
 
