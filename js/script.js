@@ -27,13 +27,16 @@ document.body.addEventListener('click', (event) => {
 // Answers on questions
 
 (function() {
-    const faqCardContents = document.querySelectorAll('.faq__card-content');
-    const faqCardAnswers = document.querySelector('.faq__card-answer');
+    const faqCardContents = Array.from(document.querySelectorAll('.faq__card-content'));
+    const faqCardAnswers = Array.from(document.querySelectorAll('.faq__card-answer'));
     
     for (const faqCardContent of faqCardContents) {
-        faqCardContent.addEventListener('click', () => {
-            faqCardContent.classList.toggle('faq__card-content_hidden');
-            faqCardAnswers.classList.toggle('faq__card-answer_hidden');
+        faqCardContent.addEventListener('click', (event) => {
+            let faqCardContentIndex = faqCardContents.indexOf(faqCardContent);
+            console.log(faqCardContentIndex);
+
+            faqCardContents[faqCardContentIndex].classList.toggle('faq__card-content_hidden');
+            faqCardAnswers[faqCardContentIndex].classList.toggle('faq__card-answer_hidden');
         });
     }
 }());

@@ -333,6 +333,7 @@ button{
     box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
     border-radius: 10px;
     cursor: pointer;
+    user-select: none;
     z-index: 10;
 }
 
@@ -341,10 +342,9 @@ button{
     position: absolute;
     top: 50%;
     right: 35px;
-    transform: translateY(-50%);
-    display: block;
     width: 20px;
     height: 20px;
+    transform: translateY(-50%);
     z-index: 20;
 }
 
@@ -366,6 +366,7 @@ button{
 }
 
 .faq__card-answer{
+    position: relative;
     padding: 90px 35px 60px;
     font-weight: 300;
     font-size: 18px;
@@ -374,14 +375,12 @@ button{
     box-shadow: 0px 20px 40px rgba(238, 77, 71, 0.1);
     border-radius: 10px;
     transform: translateY(-40px);
+    transition: 1s;
     z-index: -1;
 }
 
 .faq__card-answer_hidden{
-    position: absolute;
     top: -100%;
-    left: 0;
-    width: 100%;
 }
 
 .faq__cards-more-container{
@@ -390,17 +389,13 @@ button{
     gap: 20px;
 }
 
-.faq__cards-more-space,
-.faq__cards-more{
-    flex-basis: 550px;
-    min-height: 90px;
-}
-
 .faq__cards-more{
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    min-height: 90px;
     padding: 15px;
     background-color: rgba(237, 77, 71, 0.2);
     border-radius: 10px;
