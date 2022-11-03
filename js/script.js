@@ -1,6 +1,7 @@
 // Scroll from header
 (function() {
     const headerLinks = document.querySelectorAll('.header__nav-item .header__nav-link');
+    const footerLinks = document.querySelectorAll('.footer__container-link');
     
     for (const headerLink of headerLinks) {
         headerLink.addEventListener('click', (event) => {
@@ -11,7 +12,20 @@
                 behavior: 'smooth',
                 block: 'start'
             });
-        })
+        });
+    }
+
+    // Доработать
+    for (const footerLink of footerLinks) {
+        footerLink.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const id = footerLink.getAttribute('href');
+            document.querySelector(id).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
     }
 }());
 
@@ -28,15 +42,15 @@ document.body.addEventListener('click', (event) => {
 
 (function() {
     const faqCardContents = Array.from(document.querySelectorAll('.faq__card-content'));
+    const faqCardQuestions = Array.from(document.querySelectorAll('.faq__card-question'));
     const faqCardAnswers = Array.from(document.querySelectorAll('.faq__card-answer'));
     
-    for (const faqCardContent of faqCardContents) {
-        faqCardContent.addEventListener('click', (event) => {
-            let faqCardContentIndex = faqCardContents.indexOf(faqCardContent);
-            console.log(faqCardContentIndex);
+    for (const faqCardQuestion of faqCardQuestions) {
+        faqCardQuestion.addEventListener('click', () => {
+            let faqCardQuestionIndex = faqCardQuestions.indexOf(faqCardQuestion);
 
-            faqCardContents[faqCardContentIndex].classList.toggle('faq__card-content_hidden');
-            faqCardAnswers[faqCardContentIndex].classList.toggle('faq__card-answer_hidden');
+            faqCardContents[faqCardQuestionIndex].classList.toggle('faq__card-content_hidden');
+            faqCardAnswers[faqCardQuestionIndex].classList.toggle('faq__card-answer_hidden');
         });
     }
 }());
