@@ -14,19 +14,6 @@
             });
         });
     }
-
-    // Доработать
-    for (const footerLink of footerLinks) {
-        footerLink.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            const id = footerLink.getAttribute('href');
-            document.querySelector(id).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    }
 }());
 
 

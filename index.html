@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traffico Page</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-no-prefix.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
                     <img src="img/page/page-logo.svg" alt="Trafico" width="212" height="50" class="header__logo-img">
                 </a>
                 <nav class="header__nav">
-                    <ul class="header__nav-items">
+                    <ul class="header__nav-items header__nav-items_hidden">
                         <li class="header__nav-item">
                             <a href="#about-block" class="header__nav-link">
                                 About
@@ -40,6 +40,11 @@
                             </a>
                         </li>
                     </ul>
+                    <div class="header__nav-burger" id="header-burger">
+                        <div class="header__nav-burger-line"></div>
+                        <div class="header__nav-burger-line"></div>
+                        <div class="header__nav-burger-line"></div>
+                    </div>
                 </nav>
             </div>
         </div>
