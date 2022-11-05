@@ -25,6 +25,17 @@ document.body.addEventListener('click', (event) => {
     }
 });
 
+// Burger in header
+
+(function(){
+    const headerBurger = document.querySelector('#header-burger');
+    const headerMenu = document.querySelector('.header__nav-items');
+
+    headerBurger.addEventListener('click', () => {
+        headerMenu.classList.toggle('header__nav-items_hidden');
+    });
+}());
+
 // Answers on questions
 
 (function() {
