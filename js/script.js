@@ -32,6 +32,7 @@ document.body.addEventListener('click', (event) => {
     const headerMenu = document.querySelector('.header__nav-items');
 
     headerBurger.addEventListener('click', () => {
+        headerBurger.classList.toggle('header__nav-burger_cross');
         headerMenu.classList.toggle('header__nav-items_hidden');
     });
 }());
@@ -43,10 +44,20 @@ document.body.addEventListener('click', (event) => {
     const faqCardQuestions = Array.from(document.querySelectorAll('.faq__card-question'));
     const faqCardAnswers = Array.from(document.querySelectorAll('.faq__card-answer'));
     
-    for (const faqCardQuestion of faqCardQuestions) {
-        faqCardQuestion.addEventListener('click', () => {
-            let faqCardQuestionIndex = faqCardQuestions.indexOf(faqCardQuestion);
 
+    for (const faqCardQuestion of faqCardQuestions) {
+
+        let faqCardQuestionIndex = faqCardQuestions.indexOf(faqCardQuestion);
+        faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
+
+        faqCardQuestion.addEventListener('click', () => {
+
+            if (faqCardContents[faqCardQuestionIndex].style.height != `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`) {
+                faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
+            }
+            else {
+                faqCardContents[faqCardQuestionIndex].style.height = 'auto';
+            }
             faqCardContents[faqCardQuestionIndex].classList.toggle('faq__card-content_hidden');
             faqCardAnswers[faqCardQuestionIndex].classList.toggle('faq__card-answer_hidden');
         });
