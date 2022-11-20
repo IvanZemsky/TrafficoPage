@@ -47,6 +47,8 @@ document.body.addEventListener('click', (event) => {
 
     for (const faqCardQuestion of faqCardQuestions) {
 
+        faqCardQuestion.style.height = "auto";
+
         let faqCardQuestionIndex = faqCardQuestions.indexOf(faqCardQuestion);
         faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
 
@@ -72,21 +74,48 @@ document.body.addEventListener('click', (event) => {
     const commentsCards = document.querySelector('.comments__cards');
 
     let leftOffset = 0;
-    let leftOffsetStep = ((document.documentElement.clientWidth) / 5) + 110;
+    let leftOffsetStep = (document.documentElement.clientWidth / 4); // where '4' is the number of cards
+
     if (leftOffsetStep > 430) {
         leftOffsetStep = 430;
     }
 
-    commentsForward.addEventListener('click', function(){
-        if (leftOffset > -leftOffsetStep*2) {
-            leftOffset -= leftOffsetStep;
-            commentsCards.style.transform = `translateX(${leftOffset}px)`;
-            commentsBack.style.opacity = '1';
+    if (document.documentElement.clientWidth < 1120) { // for 1120- px monitors
+        leftOffsetStep = document.documentElement.clientWidth - 10;
+    }
 
-            if (leftOffset <= -leftOffsetStep*2) {
-                commentsForward.style.opacity = '.5';
-            }
+    if (document.documentElement.clientWidth <= 1005) { // for 1005- px monitors
+        leftOffsetStep = document.documentElement.clientWidth - 30;
+        console.log(leftOffsetStep);
+    }
+
+    commentsForward.addEventListener('click', function(){
+        if (document.documentElement.clientWidth > 1120) {
+            if (leftOffset > -leftOffsetStep*2) {
+
+                leftOffset -= leftOffsetStep;
+                commentsCards.style.transform = `translateX(${leftOffset}px)`;
+                commentsBack.style.opacity = '1';
     
+                if (leftOffset <= -leftOffsetStep*2) {
+                    commentsForward.style.opacity = '.5';
+                }
+        
+            }
+        } 
+        else {
+            if (leftOffset > -leftOffsetStep) {
+                console.log(leftOffsetStep);
+    
+                leftOffset -= leftOffsetStep;
+                commentsCards.style.transform = `translateX(${leftOffset}px)`;
+                commentsBack.style.opacity = '1';
+    
+                if (leftOffset <= -leftOffsetStep) {
+                    commentsForward.style.opacity = '.5';
+                }
+        
+            }
         }
         
     });

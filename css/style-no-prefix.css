@@ -735,6 +735,31 @@ button{
 
 /* Media queries */
 
+@media screen and (max-width: 1120px) {
+
+    .comments__content{
+        overflow-x: hidden;
+    }
+
+    .comments__container{
+        flex-direction: column;
+    }
+
+    .comments__slider{
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .comments__cards{
+        width: 100%;
+    }
+
+    .comments__card{
+        width: calc(50% - 25px);
+    }
+
+}
+
 @media screen and (max-width: 1005px) {
 
     .wrapper{
@@ -828,6 +853,10 @@ button{
     .header__nav-burger_cross .header__nav-burger-center-line:last-child{
         transform: rotate(-45deg);
         transition: .15s;
+    }
+
+    .comments__card{
+        width: calc(50% - 35px);
     }
 
 }
