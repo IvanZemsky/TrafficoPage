@@ -43,11 +43,10 @@ document.body.addEventListener('click', (event) => {
     const faqCardContents = Array.from(document.querySelectorAll('.faq__card-content'));
     const faqCardQuestions = Array.from(document.querySelectorAll('.faq__card-question'));
     const faqCardAnswers = Array.from(document.querySelectorAll('.faq__card-answer'));
-    
 
-    for (const faqCardQuestion of faqCardQuestions) {
+    for (let faqCardQuestion of faqCardQuestions) {
 
-        faqCardQuestion.style.height = "auto";
+        faqCardQuestion.style.height = 'auto';
 
         let faqCardQuestionIndex = faqCardQuestions.indexOf(faqCardQuestion);
         faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
@@ -63,6 +62,15 @@ document.body.addEventListener('click', (event) => {
             faqCardContents[faqCardQuestionIndex].classList.toggle('faq__card-content_hidden');
             faqCardAnswers[faqCardQuestionIndex].classList.toggle('faq__card-answer_hidden');
         });
+
+        window.addEventListener('resize', () => {
+            for (faqCardQuestion of faqCardQuestions) {
+                faqCardQuestion.style.height = 'auto';
+
+                faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
+            }
+            console.log(window.innerWidth);
+        })
     }
 }());
 
@@ -74,20 +82,28 @@ document.body.addEventListener('click', (event) => {
     const commentsCards = document.querySelector('.comments__cards');
 
     let leftOffset = 0;
-    let leftOffsetStep = (document.documentElement.clientWidth / 4); // where '4' is the number of cards
+    let leftOffsetStep;
 
-    if (leftOffsetStep > 430) {
-        leftOffsetStep = 430;
-    }
+    function setLeftOffsetStep() {
 
-    if (document.documentElement.clientWidth < 1120) { // for 1120- px monitors
-        leftOffsetStep = document.documentElement.clientWidth - 10;
-    }
+        if (document.documentElement.clientWidth >= 1120) {
+            leftOffsetStep = (document.documentElement.clientWidth / 4); // where '4' is the number of cards
+        } 
 
-    if (document.documentElement.clientWidth <= 1005) { // for 1005- px monitors
-        leftOffsetStep = document.documentElement.clientWidth - 30;
-        console.log(leftOffsetStep);
+        if (leftOffsetStep > 430) {
+            leftOffsetStep = 430;
+        }
+    
+        if (document.documentElement.clientWidth < 1120) { // for 1120- px monitors
+            leftOffsetStep = document.documentElement.clientWidth - 10;
+        }
+    
+        if (document.documentElement.clientWidth <= 1005) { // for 1005- px monitors
+            leftOffsetStep = document.documentElement.clientWidth - 30;
+        }
+
     }
+    setLeftOffsetStep();
 
     commentsForward.addEventListener('click', function(){
         if (document.documentElement.clientWidth > 1120) {
@@ -132,6 +148,15 @@ document.body.addEventListener('click', (event) => {
     
         }
         
+    });
+
+    window.addEventListener('resize', () => {
+        leftOffset = 0;
+        commentsCards.style.transform = `translateX(0px)`;
+        commentsForward.style.opacity = '1';
+        commentsBack.style.opacity = '.5';
+
+        setLeftOffsetStep();
     });
 
 }());
