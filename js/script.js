@@ -1,13 +1,26 @@
 // Scroll from header
+
 (function() {
     const headerLinks = document.querySelectorAll('.header__nav-item .header__nav-link');
-    const footerLinks = document.querySelectorAll('.footer__container-link');
+    const connectLinks = document.querySelectorAll('.connect__links-link');
     
     for (const headerLink of headerLinks) {
         headerLink.addEventListener('click', (event) => {
             event.preventDefault();
 
             const id = headerLink.getAttribute('href');
+            document.querySelector(id).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+
+    for (const connectLink of connectLinks) {
+        connectLink.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const id = connectLink.getAttribute('href');
             document.querySelector(id).scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
