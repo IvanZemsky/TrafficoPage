@@ -82,8 +82,7 @@ document.body.addEventListener('click', (event) => {
 
                 faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
             }
-            console.log(window.innerWidth);
-        })
+        });
     }
 }());
 

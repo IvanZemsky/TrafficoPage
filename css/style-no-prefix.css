@@ -978,6 +978,67 @@ button{
     }
 }
 
+@media screen and (max-width: 460px) {
+
+    .header__nav-items{
+        width: 100vw;
+    }
+
+    .intro{
+        background-position: 0 0;
+        background-size: 1000px;
+        margin-bottom: 45px;
+    }
+
+    .intro__content{
+        padding: 130px 0 120px;
+    }
+
+    .about__text,
+    .how__text{
+        padding: 0;
+    }
+
+    .faq{
+        margin-bottom: 45px;
+    }
+
+    .faq__content{
+        padding: 0 0 25px 0;
+    }
+
+    .faq__text-container{
+        padding-top: 90px;
+    }
+
+    .comments{
+        margin-bottom: 45px;
+    }
+
+    .connect{
+        background: none;
+    }
+
+    .connect::after{
+        top: 0;
+        height: 100%;
+    }
+
+    .connect__text-container{
+        padding: 35px 0 0 0;
+    }
+
+    .connect__links-nav{
+        flex-wrap: wrap;
+        gap: 25px 30px;
+    }
+
+    .footer__container{
+        flex-wrap: wrap;
+    }
+
+}
+
 @media screen and (max-width: 430px) {
 
     .header__content{
