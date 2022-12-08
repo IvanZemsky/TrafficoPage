@@ -571,6 +571,10 @@ button{
     line-height: 30px;
 }
 
+.comments__arrows_tablet{
+    display: none;
+}
+
 /* Connect */
 
 .connect{
@@ -976,6 +980,33 @@ button{
     .connect__container{
         flex-wrap: wrap;
     }
+}
+
+@media screen and (max-width: 625px){
+
+    .comments__container{
+        margin-bottom: 25px;
+    }
+
+    .comments__arrows_desktop{
+        display: none;
+    }
+
+    .comments__arrows_tablet{
+        display: flex;
+    }
+
+    .comments__card{
+        padding: 20px;
+        width: calc(100% - 50px);
+    }
+
+    .comments__arrows{
+        width: 125px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
 }
 
 @media screen and (max-width: 460px) {

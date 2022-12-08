@@ -89,8 +89,8 @@ document.body.addEventListener('click', (event) => {
 // Slider
 
 (function() {
-    const commentsBack = document.querySelector('#comments-back');
-    const commentsForward = document.querySelector('#comments-forward');
+    const commentsBackButtons = Array.from(document.querySelectorAll('.comments__arrow-back'));
+    const commentsForwardButtons = Array.from(document.querySelectorAll('.comments__arrow-forward'));
     const commentsCards = document.querySelector('.comments__cards');
 
     let leftOffset = 0;
@@ -98,7 +98,7 @@ document.body.addEventListener('click', (event) => {
 
     function setLeftOffsetStep() {
 
-        if (document.documentElement.clientWidth >= 1120) {
+        if (document.documentElement.clientWidth > 1120) {
             leftOffsetStep = (document.documentElement.clientWidth / 4); // where '4' is the number of cards
         } 
 
@@ -106,7 +106,7 @@ document.body.addEventListener('click', (event) => {
             leftOffsetStep = 430;
         }
     
-        if (document.documentElement.clientWidth < 1120) { // for 1120- px monitors
+        if (document.documentElement.clientWidth <= 1120) { // for 1120- px monitors
             leftOffsetStep = document.documentElement.clientWidth - 10;
         }
     
@@ -117,51 +117,75 @@ document.body.addEventListener('click', (event) => {
     }
     setLeftOffsetStep();
 
-    commentsForward.addEventListener('click', function(){
-        if (document.documentElement.clientWidth > 1120) {
-            if (leftOffset > -leftOffsetStep*2) {
+    for (let commentsForwardButton of commentsForwardButtons) {
 
-                leftOffset -= leftOffsetStep;
-                commentsCards.style.transform = `translateX(${leftOffset}px)`;
-                commentsBack.style.opacity = '1';
+        commentsForwardButton.addEventListener('click', () => {
+            if (document.documentElement.clientWidth > 1120) {
+                if (leftOffset > -leftOffsetStep*2) {
     
-                if (leftOffset <= -leftOffsetStep*2) {
-                    commentsForward.style.opacity = '.5';
+                    leftOffset -= leftOffsetStep;
+                    commentsCards.style.transform = `translateX(${leftOffset}px)`;
+                    commentsBackButtons.forEach((item) => item.style.opacity = '1');
+        
+                    if (leftOffset <= -leftOffsetStep*2) {
+                        commentsForwardButton.style.opacity = '.5';
+                    }
+            
+                }
+            } 
+    
+            if (document.documentElement.clientWidth <= 1120 && document.documentElement.clientWidth > 625) {
+                if (leftOffset > -leftOffsetStep) {
+        
+                    leftOffset -= leftOffsetStep;
+                    commentsCards.style.transform = `translateX(${leftOffset}px)`;
+                    commentsBackButtons.forEach((item) => item.style.opacity = '1');
+        
+                    if (leftOffset <= -leftOffsetStep) {
+                        commentsForwardButton.style.opacity = '.5';
+                    }
+            
+                }
+            }
+    
+            if (document.documentElement.clientWidth <= 625) {
+                if (leftOffset > -leftOffsetStep*3) {
+        
+                    leftOffset -= leftOffsetStep;
+                    commentsCards.style.transform = `translateX(${leftOffset}px)`;
+                    commentsBackButtons.forEach((item) => item.style.opacity = '1');
+        
+                    if (leftOffset <= -leftOffsetStep*3) {
+                        commentsForwardButton.style.opacity = '.5';
+                    }
+            
+                }
+            }
+           
+            
+        });
+
+    }
+    
+    for (let commentsBackButton of commentsBackButtons) {
+
+        commentsBackButton.addEventListener('click', () => {
+            if (leftOffset < 0) {
+                leftOffset += leftOffsetStep;
+                commentsCards.style.transform = `translateX(${leftOffset}px)`;
+                commentsForwardButtons.forEach((item) => item.style.opacity = '1');
+    
+                if (leftOffset == 0) {
+                    commentsBackButton.style.opacity = '0.5';
                 }
         
             }
-        } 
-        else {
-            if (leftOffset > -leftOffsetStep) {
-                console.log(leftOffsetStep);
-    
-                leftOffset -= leftOffsetStep;
-                commentsCards.style.transform = `translateX(${leftOffset}px)`;
-                commentsBack.style.opacity = '1';
-    
-                if (leftOffset <= -leftOffsetStep) {
-                    commentsForward.style.opacity = '.5';
-                }
-        
-            }
-        }
-        
-    });
+            
+        });
 
-    commentsBack.addEventListener('click', function(){
-        if (leftOffset < 0) {
-            leftOffset += leftOffsetStep;
-            commentsCards.style.transform = `translateX(${leftOffset}px)`;
-            commentsForward.style.opacity = '1';
+    }
 
-            if (leftOffset == 0) {
-                commentsBack.style.opacity = '.5';
-            }
-    
-        }
-        
-    });
-
+    /*
     window.addEventListener('resize', () => {
         leftOffset = 0;
         commentsCards.style.transform = `translateX(0px)`;
@@ -170,6 +194,7 @@ document.body.addEventListener('click', (event) => {
 
         setLeftOffsetStep();
     });
+    */
 
 }());
 
