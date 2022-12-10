@@ -80,17 +80,17 @@ document.body.addEventListener('click', (event) => {
             faqCardQuestionLines[faqCardQuestionIndex].classList.toggle('faq__card-sign-line_raised');
         });
 
-        let currentWidnowWidth = window.innerWidth;
+        let currentWindowWidth = window.innerWidth;
 
         window.addEventListener('resize', () => {
-            if (currentWidnowWidth != window.innerWidth) {
+            if (currentWindowWidth != window.innerWidth) {
 
                 for (faqCardQuestion of faqCardQuestions) {
                     faqCardQuestion.style.height = 'auto';
     
                     faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
                     faqCardQuestionLines[faqCardQuestionIndex].classList.add('faq__card-sign-line_raised');
-                    currentWidnowWidth = window.innerWidth;
+                    currentWindowWidth = window.innerWidth;
                 }
 
             }
@@ -197,11 +197,11 @@ document.body.addEventListener('click', (event) => {
 
     }
 
-    let currentWidnowWidth = window.innerWidth;
+    let currentWindowWidth = window.innerWidth;
 
     window.addEventListener('resize', () => {
 
-        if (currentWidnowWidth != window.window) {
+        if (currentWindowWidth != window.innerWidth) {
 
             leftOffset = 0;
             commentsCards.style.transform = `translateX(0px)`;
@@ -209,8 +209,8 @@ document.body.addEventListener('click', (event) => {
             commentsBackButtons.forEach((item) => item.style.opacity = '0.5');
 
             setLeftOffsetStep();
-            currentWidnowWidth = window.innerWidth;
-
+            currentWindowWidth = window.innerWidth;
+            
         }
         
     });
