@@ -385,9 +385,17 @@ button{
     z-index: 25;
 }
 
-.faq__card-sign-line:first-child,
+.faq__card-sign-line:first-child{
+    transition: .15s;
+}
+
+.faq__card-sign-line_raised{
+    transform: translateY(-50%) rotate(90deg);
+}
+
 .faq__more-sign-line:first-child{
     transform: translateY(-50%) rotate(90deg);
+    transition: .12s;
 }
 
 .faq__card-answer{
@@ -1082,6 +1090,24 @@ button{
 
     .header__logo-img{
         width: 155px;
+    }
+
+}
+
+@media screen and (max-width: 380px) {
+
+    .about__text-question{
+        padding: 20px;
+    }
+
+    .faq__card-question{
+        padding: 15px 90px 15px 15px;
+        font-size: 14px;
+    }
+
+    .faq__card-answer{
+        padding: 60px 20px 20px 20px;
+        font-size: 14px;
     }
 
 }

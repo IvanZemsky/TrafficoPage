@@ -57,6 +57,8 @@ document.body.addEventListener('click', (event) => {
     const faqCardQuestions = Array.from(document.querySelectorAll('.faq__card-question'));
     const faqCardAnswers = Array.from(document.querySelectorAll('.faq__card-answer'));
 
+    const faqCardQuestionLines = Array.from(document.querySelectorAll('.faq__card-sign-line:first-child'));
+
     for (let faqCardQuestion of faqCardQuestions) {
 
         faqCardQuestion.style.height = 'auto';
@@ -74,13 +76,23 @@ document.body.addEventListener('click', (event) => {
             }
             faqCardContents[faqCardQuestionIndex].classList.toggle('faq__card-content_hidden');
             faqCardAnswers[faqCardQuestionIndex].classList.toggle('faq__card-answer_hidden');
+
+            faqCardQuestionLines[faqCardQuestionIndex].classList.toggle('faq__card-sign-line_raised');
         });
 
-        window.addEventListener('resize', () => {
-            for (faqCardQuestion of faqCardQuestions) {
-                faqCardQuestion.style.height = 'auto';
+        let currentWidnowWidth = window.innerWidth;
 
-                faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
+        window.addEventListener('resize', () => {
+            if (currentWidnowWidth != window.innerWidth) {
+
+                for (faqCardQuestion of faqCardQuestions) {
+                    faqCardQuestion.style.height = 'auto';
+    
+                    faqCardContents[faqCardQuestionIndex].style.height = `${faqCardQuestions[faqCardQuestionIndex].offsetHeight}px`;
+                    faqCardQuestionLines[faqCardQuestionIndex].classList.add('faq__card-sign-line_raised');
+                    currentWidnowWidth = window.innerWidth;
+                }
+
             }
         });
     }
@@ -185,16 +197,24 @@ document.body.addEventListener('click', (event) => {
 
     }
 
-    /*
-    window.addEventListener('resize', () => {
-        leftOffset = 0;
-        commentsCards.style.transform = `translateX(0px)`;
-        commentsForward.style.opacity = '1';
-        commentsBack.style.opacity = '.5';
+    let currentWidnowWidth = window.innerWidth;
 
-        setLeftOffsetStep();
+    window.addEventListener('resize', () => {
+
+        if (currentWidnowWidth != window.window) {
+
+            leftOffset = 0;
+            commentsCards.style.transform = `translateX(0px)`;
+            commentsForwardButtons.forEach((item) => item.style.opacity = '1');
+            commentsBackButtons.forEach((item) => item.style.opacity = '0.5');
+
+            setLeftOffsetStep();
+            currentWidnowWidth = window.innerWidth;
+
+        }
+        
     });
-    */
+    
 
 }());
 
